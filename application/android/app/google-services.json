@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "929719224171",
+    "firebase_url": "https://coloco-fce3b.firebaseio.com",
+    "project_id": "coloco-fce3b",
+    "storage_bucket": "coloco-fce3b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:929719224171:android:d699acfda8874be9b36e2e",
+        "android_client_info": {
+          "package_name": "com.example.flutterlogindemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "929719224171-2phk8jdp2vjg80ksjco4j3noglmhavkf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDijHrs0DIis6fn0JwX0UAWr3prOxul_d0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "929719224171-2phk8jdp2vjg80ksjco4j3noglmhavkf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
