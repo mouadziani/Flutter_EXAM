@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_login_demo/pages/locations_page.dart';
 import 'package:flutter_login_demo/pages/login_signup_page.dart';
 import 'package:flutter_login_demo/services/authentication.dart';
 import 'package:flutter_login_demo/pages/home_page.dart';
@@ -65,28 +66,29 @@ class _RootPageState extends State<RootPage> {
 
   @override
   Widget build(BuildContext context) {
-    switch (authStatus) {
-      case AuthStatus.NOT_DETERMINED:
-        return buildWaitingScreen();
-        break;
-      case AuthStatus.NOT_LOGGED_IN:
-        return new LoginSignupPage(
-          auth: widget.auth,
-          loginCallback: loginCallback,
-        );
-        break;
-      case AuthStatus.LOGGED_IN:
-        if (_userId.length > 0 && _userId != null) {
-          return new HomePage(
-            userId: _userId,
-            auth: widget.auth,
-            logoutCallback: logoutCallback,
-          );
-        } else
-          return buildWaitingScreen();
-        break;
-      default:
-        return buildWaitingScreen();
-    }
+    return new LocationsPage();
+//    switch (authStatus) {
+//      case AuthStatus.NOT_DETERMINED:
+//        return buildWaitingScreen();
+//        break;
+//      case AuthStatus.NOT_LOGGED_IN:
+//        return new LoginSignupPage(
+//          auth: widget.auth,
+//          loginCallback: loginCallback,
+//        );
+//        break;
+//      case AuthStatus.LOGGED_IN:
+//        if (_userId.length > 0 && _userId != null) {
+//          return new HomePage(
+//            userId: _userId,
+//            auth: widget.auth,
+//            logoutCallback: logoutCallback,
+//          );
+//        } else
+//          return buildWaitingScreen();
+//        break;
+//      default:
+//        return buildWaitingScreen();
+//    }
   }
 }

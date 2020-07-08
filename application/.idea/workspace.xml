@@ -4,7 +4,12 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c304e8f-8b51-4d03-af7a-d0fd71e71afd" name="Default" comment="" />
+    <list default="true" id="9c304e8f-8b51-4d03-af7a-d0fd71e71afd" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Dart_SDK.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/Flutter_EXAM.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/Flutter_EXAM.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,22 +23,12 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>Clip</find>
-      <find>radius</find>
-      <find>verify</find>
-      <find>signUp</find>
-      <find>LoginSignUpPage</find>
-      <find>home</find>
-      <find>snackbar</find>
-      <find>_validateAndSubmit</find>
-      <find>build</find>
-      <find>showInSnackBar</find>
-      <find>_showVerDialog</find>
-      <find>login</find>
-      <find>_LoginSignUpPageState</find>
-    </findStrings>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -54,9 +49,14 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets" />
     <property name="settings.editor.selected.configurable" value="flutter.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Education\Master ISI\S2\Mobile 2\Flutter_EXAM\application\assets" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="Applet">
@@ -110,6 +110,7 @@
       <workItem from="1594158660014" duration="2061000" />
       <workItem from="1594205442159" duration="2283000" />
       <workItem from="1594222483441" duration="1590000" />
+      <workItem from="1594225653491" duration="13294000" />
     </task>
     <servers />
   </component>
@@ -129,26 +130,30 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="123" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1594224102004" />
-    <state width="1323" height="80" key="GridCell.Tab.0.bottom" timestamp="1594224105191">
+    <state width="1006" height="209" key="GridCell.Tab.0.bottom" timestamp="1594240069151">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="80" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1594224105191" />
-    <state width="1323" height="80" key="GridCell.Tab.0.center" timestamp="1594224105191">
+    <state width="1006" height="209" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1594240069151" />
+    <state width="1006" height="209" key="GridCell.Tab.0.center" timestamp="1594240069149">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="80" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1594224105191" />
-    <state width="1323" height="80" key="GridCell.Tab.0.left" timestamp="1594224105191">
+    <state width="1006" height="209" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1594240069149" />
+    <state width="1006" height="209" key="GridCell.Tab.0.left" timestamp="1594240069146">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="80" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1594224105191" />
-    <state width="1323" height="80" key="GridCell.Tab.0.right" timestamp="1594224105191">
+    <state width="1006" height="209" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1594240069146" />
+    <state width="1006" height="209" key="GridCell.Tab.0.right" timestamp="1594240069150">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="80" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1594224105191" />
+    <state width="1006" height="209" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1594240069150" />
     <state x="186" y="10" key="SettingsEditor" timestamp="1594159169332">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="186" y="10" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1594159169332" />
+    <state width="498" height="477" key="SwitcherDM" timestamp="1594239255839">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="498" height="477" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1594239255839" />
     <state x="391" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1594206138536">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -157,6 +162,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="65" y="73" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1594207681808" />
+    <state x="187" y="166" key="run.anything.popup" timestamp="1594229650688">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="187" y="166" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1594229650688" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
