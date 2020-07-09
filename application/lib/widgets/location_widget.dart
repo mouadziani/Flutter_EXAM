@@ -9,6 +9,8 @@ class LocationWidget extends StatefulWidget {
 }
 
 class _LocationWidgetState extends State<LocationWidget> {
+
+
   @override
   void initState() {
     super.initState();
@@ -21,12 +23,12 @@ class _LocationWidgetState extends State<LocationWidget> {
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => LocationDetailsPage()),
-      )
-    },
+        )
+      },
       child: new Container(
         height: 185,
         child: Card(
-          color: Colors.green,
+          color: Colors.white,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
           ),
@@ -38,7 +40,7 @@ class _LocationWidgetState extends State<LocationWidget> {
                   width: 160,
                   height: double.infinity,
                   image: NetworkImage(
-                      'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg'
+                      'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTY4qPH15DlLAL6qwyZSUF0JeMyEFg1vCE7Nw&usqp=CAU'
                   ),
                   fit: BoxFit.cover,
                 ),
@@ -53,20 +55,23 @@ class _LocationWidgetState extends State<LocationWidget> {
                         child: Column(
                           children: <Widget>[
                             Text(
-                              'Vous pouvez voir L’interface graphique'
-                                  .toUpperCase(),
+                              'Vous pouvez voir L’interface graphique'.toUpperCase(),
                               style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 14
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14,
+                                height: 1.3
                               ),
                               textAlign: TextAlign.left,
                             ),
-                            Divider(color: Colors.grey),
+                            Divider(
+                              color: Colors.grey
+                            ),
                             Text(
-                                'Test test test test test test test test test test test test test test test test test test test test test test test test',
+                                "On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est contenant du sens est ",
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 14,
+                                    height: 1.2,
                                     color: Colors.grey
                                 )
                             ),
@@ -82,10 +87,17 @@ class _LocationWidgetState extends State<LocationWidget> {
                             ),
                           ),
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            mainAxisAlignment: MainAxisAlignment.end,
                             children: <Widget>[
-                              Text('Comments (10)'),
-                              Text('100 MAD'),
+                              Text(
+                                  '100 MAD / Mois',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 14,
+                                    height: 1.2,
+                                    color: Colors.blueAccent
+                                  ),
+                              ),
                             ],
                           ),
                         ),

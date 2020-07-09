@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_login_demo/shared/widgets/serach_appbar_widget.dart';
 import 'package:flutter_login_demo/widgets/location_widget.dart';
 
 class LocationsPage extends StatefulWidget {
@@ -18,10 +19,13 @@ class _LocationsPageState extends State<LocationsPage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('Flutter login demo'),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(100.0),
+        child: SearchAppBarWidget(),
       ),
-      body: ListView(
+      body: Padding(
+        padding: EdgeInsets.only(top: 13),
+        child: ListView(
           children: <Widget>[
             LocationWidget(),
             LocationWidget(),
@@ -31,6 +35,7 @@ class _LocationsPageState extends State<LocationsPage> {
             LocationWidget(),
           ],
         ),
+      ),
       floatingActionButton: FloatingActionButton(
         tooltip: 'Add new location',
         child: Icon(
