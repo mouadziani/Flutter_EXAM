@@ -167,7 +167,7 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
           contentPadding: EdgeInsets.all(20),
           border: new OutlineInputBorder(
             borderRadius: const BorderRadius.all(
-              const Radius.circular(50.0),
+              const Radius.circular(10.0),
             ),
           ),
           hintText: 'Email',
@@ -189,7 +189,7 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
             contentPadding: EdgeInsets.all(20),
             border: new OutlineInputBorder(
               borderRadius: const BorderRadius.all(
-                const Radius.circular(50.0),
+                const Radius.circular(10.0),
               ),
             ),
             hintText: 'Password'
@@ -216,8 +216,8 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
           child: new RaisedButton(
             elevation: 5.0,
             shape: new RoundedRectangleBorder(
-                borderRadius: new BorderRadius.circular(30.0)),
-            color: Colors.blue,
+                borderRadius: new BorderRadius.circular(10.0)),
+            color: Colors.red,
             child: new Text(_isLoginForm ? 'Login' : 'Create account',
                 style: new TextStyle(fontSize: 20.0, color: Colors.white)),
                 onPressed: validateAndSubmit,

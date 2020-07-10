@@ -1,158 +1,122 @@
-import 'dart:async';
-import 'dart:io';
-
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 
-class MyHomePage extends StatefulWidget {
+class LocationFormPage extends StatefulWidget {
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _LocationFormPageState createState() => _LocationFormPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  File _image;
-  Firestore _firestore = Firestore.instance;
+class _LocationFormPageState extends State<LocationFormPage> {
+  final _formKey = new GlobalKey<FormState>();
 
-  String _retrievedImageUrl;
+  String _title;
+  String _adress;
+  double _price;
+  String _currency;
 
-  Future getImage() async {
-    try {
-      File image = await ImagePicker.pickImage(source: ImageSource.gallery);
-
-      setState(() {
-        _image = image;
-      });
-    } catch (e) {
-      print(e);
-    }
+  Widget showTitleInput() {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 0.0),
+      child: new TextFormField(
+        maxLines: 1,
+        keyboardType: TextInputType.text,
+        autofocus: false,
+        decoration: new InputDecoration(
+          contentPadding: EdgeInsets.all(20),
+          border: new OutlineInputBorder(
+            borderRadius: const BorderRadius.all(
+              const Radius.circular(10.0),
+            ),
+          ),
+          hintText: 'Title',
+        ),
+        validator: (value) => value.isEmpty ? 'Title can\'t be empty' : null,
+        onSaved: (value) => _title = value.trim(),
+      ),
+    );
+  }
+  Widget showAdressInput() {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 0.0),
+      child: new TextFormField(
+        maxLines: 3,
+        keyboardType: TextInputType.text,
+        autofocus: false,
+        decoration: new InputDecoration(
+          contentPadding: EdgeInsets.all(20),
+          border: new OutlineInputBorder(
+            borderRadius: const BorderRadius.all(
+              const Radius.circular(10.0),
+            ),
+          ),
+          hintText: 'Adress',
+        ),
+        validator: (value) => value.isEmpty ? 'Adress can\'t be empty' : null,
+        onSaved: (value) => _adress = value.trim(),
+      ),
+    );
   }
 
-  Future uploadImage() async {
-    try {
-      final StorageReference storageReference = FirebaseStorage().ref().child("profilePicture");
-
-      final StorageUploadTask uploadTask = storageReference.putFile(_image);
-
-      final StreamSubscription<StorageTaskEvent> streamSubscription =
-      uploadTask.events.listen((event) {
-        // You can use this to notify yourself or your user in any kind of way.
-        // For example: you could use the uploadTask.events stream in a StreamBuilder instead
-        // to show your user what the current status is. In that case, you would not need to cancel any
-        // subscription as StreamBuilder handles this automatically.
-
-        // Here, every StorageTaskEvent concerning the upload is printed to the logs.
-        print('EVENT ${event.type}');
-      });
-
-      // Cancel your subscription when done.
-      await uploadTask.onComplete;
-      streamSubscription.cancel();
-
-      String imageUrl = await storageReference.getDownloadURL();
-      await _firestore.collection("users").document("user1").setData({
-        "profilePicture": imageUrl,
-      });
-    } catch (e) {
-      print(e);
-    }
-  }
-
-  Future retrieveImage() async {
-    DocumentSnapshot documentSnapshot;
-    try {
-      documentSnapshot = await _firestore.collection("users").document("user1").get();
-      setState(() {
-        _retrievedImageUrl = documentSnapshot.data["profilePicture"];
-      });
-    } catch (e) {
-      print(e);
-    }
-  }
-
-  Future uploadMultipleImages() async {
-    List<File> _imageList = List();
-    List<String> _imageUrls = List();
-
-    _imageList.add(_image);
-    _imageList.add(_image);
-    _imageList.add(_image);
-
-    try {
-      for (int i = 0; i < _imageList.length; i++) {
-        final StorageReference storageReference = FirebaseStorage().ref().child("multiple2/$i");
-
-        final StorageUploadTask uploadTask = storageReference.putFile(_imageList[i]);
-
-        final StreamSubscription<StorageTaskEvent> streamSubscription =
-        uploadTask.events.listen((event) {
-          // You can use this to notify yourself or your user in any kind of way.
-          // For example: you could use the uploadTask.events stream in a StreamBuilder instead
-          // to show your user what the current status is. In that case, you would not need to cancel any
-          // subscription as StreamBuilder handles this automatically.
-
-          // Here, every StorageTaskEvent concerning the upload is printed to the logs.
-          print('EVENT ${event.type}');
-        });
-
-        // Cancel your subscription when done.
-        await uploadTask.onComplete;
-        streamSubscription.cancel();
-
-        String imageUrl = await storageReference.getDownloadURL();
-        _imageUrls.add(imageUrl); //all all the urls to the list
-      }
-      //upload the list of imageUrls to firebase as an array
-      await _firestore.collection("users").document("user1").setData({
-        "arrayOfImages": _imageUrls,
-      });
-    } catch (e) {
-      print(e);
-    }
+  Widget showPriceInput() {
+    return Row(
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 0.0),
+          child: new TextFormField(
+            maxLines: 1,
+            keyboardType: TextInputType.number,
+            autofocus: false,
+            decoration: new InputDecoration(
+              contentPadding: EdgeInsets.all(20),
+              border: new OutlineInputBorder(
+                borderRadius: const BorderRadius.all(
+                  const Radius.circular(10.0),
+                ),
+              ),
+              hintText: 'Price',
+            ),
+            validator: (value) => value.isEmpty ? 'Price can\'t be empty' : null,
+            onSaved: (value) => _price = double.parse(value.trim()),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 0.0),
+          child: new DropdownButton<String>(
+            items: <String>['A', 'B', 'C', 'D'].map((String value) {
+              return new DropdownMenuItem<String>(
+                value: value,
+                child: new Text(value),
+              );
+            }).toList(),
+            onChanged: (_) {
+              print('');
+            },
+          ),
+        )
+      ],
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Firebase Storage"),
+        title: Text('Add new location'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Container(
-              child: (_retrievedImageUrl != null)
-                  ? Image.network(_retrievedImageUrl)
-                  : Text("no image retrieved"),
-              height: 300,
-            ),
-            RaisedButton(
-              child: Text("Choose Image"),
-              onPressed: () {
-                getImage();
-              },
-            ),
-            RaisedButton(
-              child: Text("Upload"),
-              onPressed: () {
-                uploadImage();
-              },
-            ),
-            RaisedButton(
-              child: Text("Retrieve Image"),
-              onPressed: () {
-                retrieveImage();
-              },
-            ),
-            RaisedButton(
-              child: Text("Upload List"),
-              onPressed: () {
-                uploadMultipleImages();
-              },
-            ),
-          ],
+      body: Container(
+        color: Colors.white,
+        padding: EdgeInsets.all(15.0),
+        child: Form(
+          key: _formKey,
+          child: ListView(
+            children: <Widget>[
+              showTitleInput(),
+              showAdressInput(),
+              showPriceInput(),
+              showTitleInput(),
+              showTitleInput(),
+            ],
+          ),
         ),
       ),
     );

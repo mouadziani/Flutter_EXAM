@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_login_demo/models/location.dart';
+import 'package:flutter_login_demo/pages/location_form_page.dart';
 import 'package:flutter_login_demo/services/authentication.dart';
 import 'package:flutter_login_demo/services/location_service.dart';
 import 'package:flutter_login_demo/shared/widgets/serach_appbar_widget.dart';
@@ -69,6 +70,12 @@ class _LocationsPageState extends State<LocationsPage> {
           color: Colors.white,
           size: 24.0,
         ),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => LocationFormPage()),
+          );
+        },
       ),
     );
   }
