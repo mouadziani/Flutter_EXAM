@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_login_demo/services/authentication.dart';
+import 'package:flutter_login_demo/shared/widgets/divider_text_middle_widget.dart';
 
 class LoginSignupPage extends StatefulWidget {
   LoginSignupPage({this.auth, this.loginCallback});
@@ -17,7 +18,6 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
   String _email;
   String _password;
   String _errorMessage;
-
   bool _isLoginForm;
   bool _isLoading;
 
@@ -42,12 +42,8 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
       try {
         if (_isLoginForm) {
           userId = await widget.auth.signIn(_email, _password);
-          print('Signed in: $userId');
         } else {
           userId = await widget.auth.signUp(_email, _password);
-          //widget.auth.sendEmailVerification();
-          //_showVerifyEmailSentDialog();
-          print('Signed up user: $userId');
         }
         setState(() {
           _isLoading = false;
@@ -110,7 +106,8 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
 
   Widget _showForm() {
     return new Container(
-        padding: EdgeInsets.all(16.0),
+        color: Colors.white,
+        padding: EdgeInsets.all(30.0),
         child: new Form(
           key: _formKey,
           child: new ListView(
@@ -120,6 +117,7 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
               showEmailInput(),
               showPasswordInput(),
               showPrimaryButton(),
+              DividerTextMiddleWidget(),
               showSecondaryButton(),
               showErrorMessage(),
             ],
@@ -166,11 +164,14 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
         keyboardType: TextInputType.emailAddress,
         autofocus: false,
         decoration: new InputDecoration(
-            hintText: 'Email',
-            icon: new Icon(
-              Icons.mail,
-              color: Colors.grey,
-            )),
+          contentPadding: EdgeInsets.all(20),
+          border: new OutlineInputBorder(
+            borderRadius: const BorderRadius.all(
+              const Radius.circular(50.0),
+            ),
+          ),
+          hintText: 'Email',
+        ),
         validator: (value) => value.isEmpty ? 'Email can\'t be empty' : null,
         onSaved: (value) => _email = value.trim(),
       ),
@@ -185,11 +186,14 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
         obscureText: true,
         autofocus: false,
         decoration: new InputDecoration(
-            hintText: 'Password',
-            icon: new Icon(
-              Icons.lock,
-              color: Colors.grey,
-            )),
+            contentPadding: EdgeInsets.all(20),
+            border: new OutlineInputBorder(
+              borderRadius: const BorderRadius.all(
+                const Radius.circular(50.0),
+              ),
+            ),
+            hintText: 'Password'
+        ),
         validator: (value) => value.isEmpty ? 'Password can\'t be empty' : null,
         onSaved: (value) => _password = value.trim(),
       ),
@@ -206,9 +210,9 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
 
   Widget showPrimaryButton() {
     return new Padding(
-        padding: EdgeInsets.fromLTRB(0.0, 45.0, 0.0, 0.0),
+        padding: EdgeInsets.fromLTRB(0.0, 35.0, 0.0, 20.0),
         child: SizedBox(
-          height: 40.0,
+          height: 50.0,
           child: new RaisedButton(
             elevation: 5.0,
             shape: new RoundedRectangleBorder(

@@ -1,20 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_login_demo/models/location.dart';
 import 'package:flutter_login_demo/pages/location_details_page.dart';
 
-class LocationWidget extends StatefulWidget {
-  LocationWidget();
+class LocationWidget extends StatelessWidget {
 
-  @override
-  State<StatefulWidget> createState() => new _LocationWidgetState();
-}
-
-class _LocationWidgetState extends State<LocationWidget> {
-
-
-  @override
-  void initState() {
-    super.initState();
-  }
+  Location _location;
+  LocationWidget([this._location]);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +13,7 @@ class _LocationWidgetState extends State<LocationWidget> {
       onTap: () => {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => LocationDetailsPage()),
+          MaterialPageRoute(builder: (context) => LocationDetailsPage(_location)),
         )
       },
       child: new Container(
@@ -40,7 +31,7 @@ class _LocationWidgetState extends State<LocationWidget> {
                   width: 160,
                   height: double.infinity,
                   image: NetworkImage(
-                      'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTY4qPH15DlLAL6qwyZSUF0JeMyEFg1vCE7Nw&usqp=CAU'
+                      _location.images[0]
                   ),
                   fit: BoxFit.cover,
                 ),
@@ -53,27 +44,40 @@ class _LocationWidgetState extends State<LocationWidget> {
                     children: <Widget>[
                       Container(
                         child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             Text(
-                              'Vous pouvez voir L’interface graphique'.toUpperCase(),
+                              _location.title.toUpperCase(),
                               style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 14,
-                                height: 1.3
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 15,
+                                  height: 1.3
                               ),
                               textAlign: TextAlign.left,
                             ),
                             Divider(
-                              color: Colors.grey
+                                color: Colors.black12
                             ),
                             Text(
-                                "On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est contenant du sens est ",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 14,
-                                    height: 1.2,
-                                    color: Colors.grey
-                                )
+                              _location.adress.substring(0, 60) + '...',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14,
+                                  height: 1.2,
+                                  color: Colors.grey
+                              )
+                            ),
+                            Divider(
+                              color: Colors.white
+                            ),
+                            Text(
+                              _location.getAttributes(),
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 13,
+                                  height: 1.2,
+                                  color: Colors.black26
+                              )
                             ),
                           ],
                         ),
@@ -83,20 +87,20 @@ class _LocationWidgetState extends State<LocationWidget> {
                         child: Container(
                           decoration: BoxDecoration(
                             border: Border(
-                              top: BorderSide(width: 1, color: Colors.grey),
+                              top: BorderSide(width: 1, color: Colors.black12),
                             ),
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: <Widget>[
                               Text(
-                                  '100 MAD / Mois',
-                                  style: TextStyle(
+                                _location.price + " " + _location.currency + " / Mois",
+                                style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 14,
                                     height: 1.2,
                                     color: Colors.blueAccent
-                                  ),
+                                ),
                               ),
                             ],
                           ),

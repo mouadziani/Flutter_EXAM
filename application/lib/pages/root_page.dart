@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_login_demo/pages/location_form_page.dart';
+import 'package:flutter_login_demo/pages/location_map_page.dart';
 import 'package:flutter_login_demo/pages/locations_page.dart';
 import 'package:flutter_login_demo/pages/login_signup_page.dart';
 import 'package:flutter_login_demo/services/authentication.dart';
-import 'package:flutter_login_demo/pages/home_page.dart';
 
 enum AuthStatus {
   NOT_DETERMINED,
@@ -66,7 +67,6 @@ class _RootPageState extends State<RootPage> {
 
   @override
   Widget build(BuildContext context) {
-    // return new LocationsPage();
     switch (authStatus) {
       case AuthStatus.NOT_DETERMINED:
         return buildWaitingScreen();
@@ -79,7 +79,7 @@ class _RootPageState extends State<RootPage> {
         break;
       case AuthStatus.LOGGED_IN:
         if (_userId.length > 0 && _userId != null) {
-          return new HomePage(
+          return LocationsPage(
             userId: _userId,
             auth: widget.auth,
             logoutCallback: logoutCallback,

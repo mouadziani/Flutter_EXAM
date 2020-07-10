@@ -1,31 +1,20 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_login_demo/models/location.dart';
+import 'package:flutter_login_demo/pages/location_map_page.dart';
 import 'package:flutter_login_demo/shared/widgets/vertical_divider_widget.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-class LocationDetailsPage extends StatefulWidget {
-  LocationDetailsPage();
+class LocationDetailsPage extends StatelessWidget {
 
-  @override
-  State<StatefulWidget> createState() => new _LocationDetailsPageState();
-}
+  Location _location;
 
-class _LocationDetailsPageState extends State<LocationDetailsPage> {
-  final _imageUrls = [
-    "https://png.pngtree.com/thumb_back/fw800/back_pic/00/03/35/09561e11143119b.jpg",
-    "https://png.pngtree.com/thumb_back/fw800/back_pic/04/61/87/28586f2eec77c26.jpg",
-    "https://png.pngtree.com/thumb_back/fh260/back_pic/04/29/70/37583fdf6f4050d.jpg",
-    "https://ak6.picdn.net/shutterstock/videos/6982306/thumb/1.jpg"
-  ];
-
-  @override
-  void initState() {
-    super.initState();
-  }
+  LocationDetailsPage(this._location);
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
+    return Scaffold(
       appBar: new AppBar(
         title: new Text('Location details'),
       ),
@@ -35,20 +24,17 @@ class _LocationDetailsPageState extends State<LocationDetailsPage> {
           children: <Widget>[
             CarouselSlider(
               options: CarouselOptions(height: 260.0),
-              items: [1, 2].map((i) {
+              items: _location.images.map((image) {
                 return Builder(
                   builder: (BuildContext context) {
                     return Container(
                       width: double.infinity,
                       margin: EdgeInsets.symmetric(horizontal: 5.0),
-                      decoration: BoxDecoration(color: Colors.amber),
+                      decoration: BoxDecoration(color: Colors.black12),
                       child: Image(
                         width: 160,
                         height: double.infinity,
-                        image: NetworkImage(
-                            'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTY4qPH15DlLAL6qwyZSUF0JeMyEFg1vCE7Nw&usqp=CAU'
-                          // 'assets/flutter-icon.png'
-                        ),
+                        image: NetworkImage(image),
                         fit: BoxFit.cover,
                       ),
                     );
@@ -74,13 +60,12 @@ class _LocationDetailsPageState extends State<LocationDetailsPage> {
                               padding: EdgeInsets.only(top: 5, bottom: 8),
                               child: Row(
                                 mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                MainAxisAlignment.spaceBetween,
                                 children: <Widget>[
                                   Flexible(
                                     flex: 3,
                                     child: Text(
-                                      'Vous pouvez voir L’interface  L’interface  L’interface '
-                                          .toUpperCase(),
+                                      _location.title.toUpperCase(),
                                       style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 17,
@@ -94,7 +79,7 @@ class _LocationDetailsPageState extends State<LocationDetailsPage> {
                                       child: Column(
                                         children: <Widget>[
                                           Text(
-                                            '1000.00 DH'.toUpperCase(),
+                                            (_location.price + ' ' + _location.currency).toUpperCase(),
                                             style: TextStyle(
                                                 fontWeight: FontWeight.bold,
                                                 fontSize: 15,
@@ -122,43 +107,22 @@ class _LocationDetailsPageState extends State<LocationDetailsPage> {
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: <Widget>[
-                                Container(
-                                  padding: EdgeInsets.all(10),
-                                  child: Text('WIFI',
-                                      style: TextStyle(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
-                                      )),
-                                ),
-                                VerticalDividerWidget(),
-                                Container(
-                                  padding: EdgeInsets.all(10),
-                                  child: Text('2 Roms',
-                                      style: TextStyle(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
-                                      )),
-                                ),
-                                VerticalDividerWidget(),
-                                Container(
-                                  padding: EdgeInsets.all(10),
-                                  child: Text('2 Roms',
-                                      style: TextStyle(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
-                                      )),
-                                ),
-                                VerticalDividerWidget(),
-                                Container(
-                                  padding: EdgeInsets.all(10),
-                                  child: Text('2 M°',
-                                      style: TextStyle(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
-                                      )),
-                                ),
-                              ],
+                              children:
+                                _location.attributes.map((attribute) =>
+                                  Row(
+                                    children: <Widget>[
+                                      Container(
+                                        padding: EdgeInsets.all(10),
+                                        child: Text(attribute,
+                                            style: TextStyle(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.bold,
+                                            )),
+                                      ),
+                                      // VerticalDividerWidget(),
+                                    ],
+                                  )
+                                ).toList(),
                             ),
                             Divider(
                               color: Colors.grey,
@@ -166,7 +130,7 @@ class _LocationDetailsPageState extends State<LocationDetailsPage> {
                             Padding(
                               padding: EdgeInsets.only(top: 5),
                               child: Text(
-                                'Vous pouvez voir L’interface interface gL’interface gL’interface gL’interface gL’interface gL’interface gL’interface graphique Vous pouvez voir L’interface graphique Vous pouvez voir L’interface graphique Vous pouvez voir L’interface graphique',
+                                _location.adress,
                                 style: TextStyle(
                                   fontSize: 14,
                                   height: 1.5,
@@ -191,7 +155,7 @@ class _LocationDetailsPageState extends State<LocationDetailsPage> {
                                 padding: EdgeInsets.all(12),
                                 shape: new RoundedRectangleBorder(
                                     borderRadius:
-                                        new BorderRadius.circular(10.0)),
+                                    new BorderRadius.circular(10.0)),
                                 color: Colors.blueAccent,
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -204,13 +168,18 @@ class _LocationDetailsPageState extends State<LocationDetailsPage> {
                                     SizedBox(
                                       width: 10,
                                     ),
-                                    Text('+212 677 095 298',
+                                    Text(
+                                        _location.phoneNumber,
                                         style: TextStyle(
                                             fontSize: 15.0,
-                                            color: Colors.white))
+                                            color: Colors.white
+                                        )
+                                    ),
                                   ],
                                 ),
-                                onPressed: () {},
+                                onPressed: () {
+                                  launch("tel://" + _location.phoneNumber);
+                                },
                               ),
                             ),
                             Container(
@@ -219,14 +188,19 @@ class _LocationDetailsPageState extends State<LocationDetailsPage> {
                                 padding: EdgeInsets.all(12),
                                 shape: new RoundedRectangleBorder(
                                     borderRadius:
-                                        new BorderRadius.circular(10.0)),
+                                    new BorderRadius.circular(10.0)),
                                 color: Colors.deepOrangeAccent,
                                 child: Icon(
                                   Icons.location_on,
                                   color: Colors.white,
                                   size: 24.0,
                                 ),
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => LocationMapPage(long: double.parse(_location.long), lat: double.parse(_location.lat))),
+                                  );
+                                },
                               ),
                             ),
                           ],
@@ -243,3 +217,4 @@ class _LocationDetailsPageState extends State<LocationDetailsPage> {
     );
   }
 }
+
