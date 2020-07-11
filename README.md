@@ -41,11 +41,15 @@ This repository contains my own implementation of the final exam of the mobile d
 
 ## Screens
 
-| Login  | Register  | Offer listing | Offer details |
-| :---: | :---: | :---: | :---: |
-| <img width="250" height="500" src="https://github.com/MouadZIANI/Flutter_EXAM/blob/master/attachements/screens/login.PNG">| <img width="250" height="500" src="https://github.com/MouadZIANI/Flutter_EXAM/blob/master/attachements/screens/register.PNG">| <img width="250" height="500" src="https://github.com/MouadZIANI/Flutter_EXAM/blob/master/attachements/screens/offers_listing.PNG">| <img width="250" height="500" src="https://github.com/MouadZIANI/Flutter_EXAM/blob/master/attachements/screens/offer_details.PNG">|
-| Offer location | Call offer owner | Add new offer | select images of offer |
-| <img width="250" height="500" src="https://github.com/MouadZIANI/Flutter_EXAM/blob/master/attachements/screens/offer_location_map.PNG">| <img width="250" height="500" src="https://github.com/MouadZIANI/Flutter_EXAM/blob/master/attachements/screens/call.PNG"> | <img width="250" height="500" src="https://github.com/MouadZIANI/Flutter_EXAM/blob/master/attachements/screens/add_offer.PNG">| <img width="250" height="500" src="https://github.com/MouadZIANI/Flutter_EXAM/blob/master/attachements/screens/select_offers_image.PNG">|
+| Login  | Register  |
+| :---: | :---: |
+| <img width="250" height="500" src="https://github.com/MouadZIANI/Flutter_EXAM/blob/master/attachements/screens/login.PNG">| <img width="250" height="500" src="https://github.com/MouadZIANI/Flutter_EXAM/blob/master/attachements/screens/register.PNG">|
+| Offer listing | Offer details |
+| <img width="250" height="500" src="https://github.com/MouadZIANI/Flutter_EXAM/blob/master/attachements/screens/offers_listing.PNG">| <img width="250" height="500" src="https://github.com/MouadZIANI/Flutter_EXAM/blob/master/attachements/screens/offer_details.PNG">|
+| Offer location | Call offer owner |
+| <img width="250" height="500" src="https://github.com/MouadZIANI/Flutter_EXAM/blob/master/attachements/screens/offer_location_map.PNG">| <img width="250" height="500" src="https://github.com/MouadZIANI/Flutter_EXAM/blob/master/attachements/screens/call.PNG">|
+| Add new offer | select images of offer |
+| <img width="250" height="500" src="https://github.com/MouadZIANI/Flutter_EXAM/blob/master/attachements/screens/add_offer.PNG">| <img width="250" height="500" src="https://github.com/MouadZIANI/Flutter_EXAM/blob/master/attachements/screens/select_offers_image.PNG">|
 
 And more ...
 
