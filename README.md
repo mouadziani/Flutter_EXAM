@@ -45,9 +45,9 @@ Not yet :(
 
 ## Screens
 
-| Login  | Login  |
-| :---: |
-| <img width="150" height="150" src="https://github.com/mouadziani.png?v=3&s=150">|
+| Login  | Register  |
+| :---: | :---: |
+| <img width="200" height="500" src="https://github.com/MouadZIANI/Flutter_EXAM/blob/master/attachements/screens/login.PNG">| <img width="200" height="500" src="https://github.com/MouadZIANI/Flutter_EXAM/blob/master/attachements/screens/register.PNG">|
 
 ## Author
 
