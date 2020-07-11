@@ -4,7 +4,11 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c304e8f-8b51-4d03-af7a-d0fd71e71afd" name="Default" comment="" />
+    <list default="true" id="9c304e8f-8b51-4d03-af7a-d0fd71e71afd" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/Flutter_EXAM.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/Flutter_EXAM.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,7 +48,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/android/app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../student_coloco" />
     <property name="settings.editor.selected.configurable" value="flutter.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -107,7 +111,10 @@
       <workItem from="1594205442159" duration="2283000" />
       <workItem from="1594222483441" duration="1590000" />
       <workItem from="1594225653491" duration="24305000" />
-      <workItem from="1594301052185" duration="56329000" />
+      <workItem from="1594301052185" duration="70316000" />
+      <workItem from="1594433220794" duration="5745000" />
+      <workItem from="1594440121323" duration="980000" />
+      <workItem from="1594473618823" duration="3036000" />
     </task>
     <servers />
   </component>
@@ -135,38 +142,38 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="93" y="103" width="878" height="528" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1594404799989" />
-    <state x="463" y="123" key="FileChooserDialogImpl" timestamp="1594224102004">
+    <state x="463" y="123" key="FileChooserDialogImpl" timestamp="1594468741597">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="123" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1594224102004" />
-    <state width="1024" height="252" key="GridCell.Tab.0.bottom" timestamp="1594409844840">
+    <state x="463" y="123" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1594468741597" />
+    <state width="1323" height="258" key="GridCell.Tab.0.bottom" timestamp="1594468745232">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1024" height="252" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1594409844840" />
-    <state width="1024" height="252" key="GridCell.Tab.0.center" timestamp="1594409844837">
+    <state width="1323" height="258" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1594468745232" />
+    <state width="1323" height="258" key="GridCell.Tab.0.center" timestamp="1594468745231">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1024" height="252" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1594409844837" />
-    <state width="1024" height="252" key="GridCell.Tab.0.left" timestamp="1594409844835">
+    <state width="1323" height="258" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1594468745231" />
+    <state width="1323" height="258" key="GridCell.Tab.0.left" timestamp="1594468745230">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1024" height="252" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1594409844835" />
-    <state width="1024" height="252" key="GridCell.Tab.0.right" timestamp="1594409844838">
+    <state width="1323" height="258" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1594468745230" />
+    <state width="1323" height="258" key="GridCell.Tab.0.right" timestamp="1594468745231">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1024" height="252" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1594409844838" />
+    <state width="1323" height="258" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1594468745231" />
     <state x="186" y="10" key="SettingsEditor" timestamp="1594159169332">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="186" y="10" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1594159169332" />
-    <state width="498" height="497" key="SwitcherDM" timestamp="1594408967162">
+    <state width="498" height="497" key="SwitcherDM" timestamp="1594438640195">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="498" height="497" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1594408967162" />
-    <state x="391" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1594301119769">
+    <state width="498" height="497" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1594438640195" />
+    <state x="391" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1594433222276">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="391" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1594301119769" />
+    <state x="391" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1594433222276" />
     <state x="133" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1594408405843">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

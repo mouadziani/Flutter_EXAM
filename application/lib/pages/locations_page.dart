@@ -27,24 +27,26 @@ class _LocationsPageState extends State<LocationsPage> {
 
   @override
   void initState() {
+    loadLocations();
     super.initState();
   }
 
   loadLocations() {
-    print('Test 1111');
-    setState(() {
-      this._locationService.getLocations().then((querySnapshot) {
-        querySnapshot.documents.forEach((response) {
-          this._locations.add(Location.fromSnapshot(response));
-          print(this._locations);
-        });
+    this._locationService.getLocations().then((querySnapshot) {
+      List<Location> locations = [];
+      querySnapshot.documents.forEach((response) {
+        print(response.data);
+        locations.add(Location.fromSnapshot(response));
+      });
+
+      setState(() {
+        this._locations = locations;
       });
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    loadLocations();
     return new Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(100.0),

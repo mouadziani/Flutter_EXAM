@@ -16,7 +16,7 @@ class LocationDetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(
-        title: new Text('Location details'),
+        title: new Text('Offer details'),
       ),
       body: Container(
         color: Colors.white,

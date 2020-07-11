@@ -3,6 +3,8 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/application/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/application/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/application/build" />
       <excludeFolder url="file://$MODULE_DIR$/applications/.pub" />
     </content>

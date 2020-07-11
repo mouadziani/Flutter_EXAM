@@ -7,7 +7,11 @@ class LocationService {
   final firestoreInstance = Firestore.instance;
 
   getLocations() {
-    return firestoreInstance.collection("cars")
-      .getDocuments();
+    return firestoreInstance.collection("cars").getDocuments();
+  }
+
+  createLocation(Location location) {
+    print(location.toJson());
+    firestoreInstance.collection("cars").add(location.toJson()).then((value) => print(value));
   }
 }

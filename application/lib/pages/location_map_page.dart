@@ -48,7 +48,7 @@ class _LocationMapPageState extends State<LocationMapPage> {
     print(this._long);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Map Location')
+        title: Text('Offer location')
       ),
       body: GoogleMap(
         onMapCreated: _onMapCreated,

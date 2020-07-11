@@ -16,9 +16,13 @@ This repository contains my own implementation of the final exam of the mobile d
 
 | Done ? | User Role   |  Action                                                              |
 |----|----------------|---------------------------------------------------------------------- |
-| :heavy_check_mark:  | User   | 1- Be able to show listing of availabe locations   |
-| :heavy_check_mark:  | User  | 2- Be able to browse details of specific location |
-| :heavy_check_mark:  | User  | 3- Be able to add location |
+| :heavy_check_mark:  | User   | 1- Be able to show listing of availabe housings   |
+| :heavy_check_mark:  | User  | 2- Be able to browse details of specific housing |
+| :heavy_check_mark:  | User  | 3- Be able to show location of a housing on the map |
+| :heavy_check_mark:  | User  | 4- Be able to add housing offer |
+| :heavy_check_mark:  | User  | 5- Be able to call housing owner |
+| :heavy_check_mark:  | User  | 6- Be able to add demand |
+| :heavy_check_mark:  | User  | 7- Be able to browse demands |
 ---
 
 ## Installation & testing
@@ -30,11 +34,10 @@ This repository contains my own implementation of the final exam of the mobile d
 ## Used technologies
 
 - **Flutter** Cross platfrom mobile Framework.
-- **Firebase** for compiling and optimizing assets (already integrated in angular).
-- **Lefleat** Map lib for flutter
+- **Firebase** As Backend API  Realtime database.
+- **Google map** Map lib for flutter
 - **Figma** For prototyping
-- **Git** for version control.
-- **Lucidchart** ??.
+- **Git& Github** for version control.
 
 ## Project Structure
     
@@ -42,7 +45,9 @@ Not yet :(
 
 ## Screens
 
-Coming soon....
+| Login  | Login  |
+| :---: |
+| <img width="150" height="150" src="https://github.com/mouadziani.png?v=3&s=150">|
 
 ## Author
 

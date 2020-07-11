@@ -59,7 +59,7 @@ class LocationWidget extends StatelessWidget {
                                 color: Colors.black12
                             ),
                             Text(
-                              _location.adress.substring(0, 60) + '...',
+                              _location.adress.substring(0, (_location.adress.length > 60 ? 60 : _location.adress.length)) + '...',
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 14,
